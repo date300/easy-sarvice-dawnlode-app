@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders the app without crashing', () => {
+test('renders the premium download landing page', () => {
   render(<App />);
-  expect(screen.getByText(/sign in/i)).toBeInTheDocument();
+  expect(screen.getByText(/download the app/i)).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /download for ios/i })).toBeInTheDocument();
 });
