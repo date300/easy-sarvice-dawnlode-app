@@ -68,12 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# easy-sarvice-dawnlode-app
+# easy-service-download-app
 
-A premium download landing page for the Easy Service app, built with React and Tailwind CSS.
+A premium download landing page for the Easy Sarvice app, built with React and Tailwind CSS.
 
 ## Features
 - Dedicated download page at /download
 - Modern premium UI and animations
 - Admin panel friendly public landing experience
 # easy-sarvice-dawnlode-app
+# easysarvice-landing-page
