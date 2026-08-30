@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="build">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/new.zip!/" />
+      <root url="jar://$PROJECT_DIR$/build/Easys-Service-iOS.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

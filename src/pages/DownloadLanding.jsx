@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView, useMotionValue, useTransform } from "framer-motion";
 import {
   ArrowRight,
@@ -16,8 +16,7 @@ import {
   Smartphone,
   Sparkles,
   Store,
-  TrendingUp,
-  Users,
+  
   Wallet,
   Zap,
   ChevronDown,
@@ -59,11 +58,11 @@ const scaleIn = {
 // ─── Content ───
 const content = {
   bn: {
-    badge: "Easy Service App",
+    badge: "Easy Sarvice App",
     heroEyebrow: "All-in-One Digital Platform",
     heroTitle: "বিনা পুঁজিতে অনলাইন ব্যবসা শুরু করুন",
     heroText:
-      "Easy Service আপনার সবকিছু একসাথে দিলো — রিচার্জ, রিসেলিং, মাইক্রোজব, শিক্ষা, AI টুলস আর আরও অনেক কিছু। সহজে শুরু করুন, নিরাপদে আয় করুন।",
+      "Easy Sarvice আপনার সবকিছু একসাথে দিলো — রিচার্জ, রিসেলিং, মাইক্রোজব, শিক্ষা, AI টুলস আর আরও অনেক কিছু। সহজে শুরু করুন, নিরাপদে আয় করুন।",
     ctaPrimary: "APK ডাউনলোড করুন",
     ctaSecondary: "ভিডিও দেখুন",
     heroPoints: [
@@ -76,6 +75,8 @@ const content = {
       { value: "৪.৮", label: "Average Rating" },
       { value: "১ লাখ+", label: "Downloads" },
     ],
+    sideCardTitle: "আমাদের অর্জন ও লক্ষ্য",
+    sideCardText: "হাজারো মানুষের আস্থার প্রতীক ইজি সার্ভিস।",
     featuresKicker: "Amazing Features",
     featuresTitle: "Everything you need in one app",
     featuresText:
@@ -96,15 +97,15 @@ const content = {
       { title: "Start Earning", text: "সেবা ব্যবহার করে আয় শুরু করুন।" },
     ],
     screenshotsKicker: "App Screenshots",
-    screenshotsTitle: "A glimpse of Easy Service App",
+    screenshotsTitle: "A glimpse of Easy Sarvice App",
     screenshots: [
       { title: "Fast launch", text: "দ্রুত লঞ্চ, পরিষ্কার ইউজার এক্সপেরিয়েন্স।", gradient: "from-cyan-500 to-blue-600" },
       { title: "Smart dashboard", text: "আপনার সব কার্যকলাপ একসাথে দেখুন।", gradient: "from-violet-500 to-purple-600" },
       { title: "Secure payments", text: "নিরাপদ লেনদেনের জন্য ডিজাইন করা প্ল্যাটফর্ম।", gradient: "from-amber-500 to-orange-600" },
       { title: "Easy AI", text: "AI টুলস দিয়ে কাজকে স্মার্ট করুন।", gradient: "from-emerald-500 to-teal-600" },
     ],
-    whyKicker: "Why Easy Service?",
-    whyTitle: "Why Choose Easy Service?",
+    whyKicker: "Why Easy Sarvice?",
+    whyTitle: "Why Choose Easy Sarvice?",
     whyItems: [
       { title: "Fast Service", description: "দ্রুত কাজ, দ্রুত রেসপন্স, সহজ এক্সপেরিয়েন্স।", icon: Zap, color: "from-cyan-500 to-blue-500" },
       { title: "Secure Payment", description: "নিরাপদে পেমেন্ট, বিশ্বস্ত লেনদেন।", icon: ShieldCheck, color: "from-violet-500 to-purple-500" },
@@ -122,7 +123,7 @@ const content = {
     ],
     faqsTitle: "Frequently Asked Questions",
     faqs: [
-      { question: "Easy Service কি?", answer: "Easy Service হলো একটি সব-কিছু-এক-জায়গায় ডিজিটাল প্ল্যাটফর্ম যেখানে রিচার্জ, রিসেলিং, মাইক্রোজব, শিক্ষা ও AI টুলস একসাথে পাওয়া যায়।" },
+      { question: "Easy Sarvice কি?", answer: "Easy Sarvice হলো একটি সব-কিছু-এক-জায়গায় ডিজিটাল প্ল্যাটফর্ম যেখানে রিচার্জ, রিসেলিং, মাইক্রোজব, শিক্ষা ও AI টুলস একসাথে পাওয়া যায়।" },
       { question: "APK কি নিরাপদ?", answer: "হ্যাঁ, আমাদের APK অফিসিয়াল সোর্স থেকে প্রদান করা হয় এবং নিরাপদ ব্যবহার নিশ্চিত করতে নিয়মিত আপডেট করা হয়।" },
       { question: "কিভাবে অ্যাকাউন্ট খুলব?", answer: "অ্যাপটি ইনস্টল করার পর সহজ ফর্ম পূরণ করে একাউন্ট তৈরি করুন।" },
       { question: "কিভাবে অ্যাপ ব্যবহার করব?", answer: "একাউন্ট খুলে আপনার পছন্দের সেবা নির্বাচন করুন এবং প্রয়োজনীয় ধাপগুলো অনুসরণ করুন।" },
@@ -130,7 +131,7 @@ const content = {
     ],
     ctaKicker: "Download Section",
     ctaTitle: "Ready to Get Started?",
-    ctaText: "এখনই Easy Service App ডাউনলোড করুন এবং সব ফিচার উপভোগ করুন।",
+    ctaText: "এখনই Easy Sarvice App ডাউনলোড করুন এবং সব ফিচার উপভোগ করুন।",
     footerTitle: "Stay connected",
     footerLinks: [
       { label: "Home", href: "#" },
@@ -153,11 +154,11 @@ const content = {
     ],
   },
   en: {
-    badge: "Easy Service App",
+    badge: "Easy Sarvice App",
     heroEyebrow: "All-in-One Digital Platform",
     heroTitle: "Start an online business with zero investment",
     heroText:
-      "Easy Service brings everything together — recharge, reselling, microjobs, education, AI tools and more. Start simple, grow safely, and earn smarter.",
+      "Easy Sarvice brings everything together — recharge, reselling, microjobs, education, AI tools and more. Start simple, grow safely, and earn smarter.",
     ctaPrimary: "Download APK",
     ctaSecondary: "Watch Video",
     heroPoints: [
@@ -170,6 +171,8 @@ const content = {
       { value: "4.8", label: "Average Rating" },
       { value: "100K+", label: "Downloads" },
     ],
+    sideCardTitle: "Our Stats & Growth",
+    sideCardText: "Trusted by thousands of users across the country.",
     featuresKicker: "Amazing Features",
     featuresTitle: "Everything you need in one app",
     featuresText:
@@ -190,15 +193,15 @@ const content = {
       { title: "Start Earning", text: "Use the services and begin earning from day one." },
     ],
     screenshotsKicker: "App Screenshots",
-    screenshotsTitle: "A glimpse of Easy Service App",
+    screenshotsTitle: "A glimpse of Easy Sarvice App",
     screenshots: [
       { title: "Fast launch", text: "A smooth, modern layout built for quick access.", gradient: "from-cyan-500 to-blue-600" },
       { title: "Smart dashboard", text: "Manage your activity and services from one place.", gradient: "from-violet-500 to-purple-600" },
       { title: "Secure payments", text: "A reliable flow for safe and trusted transactions.", gradient: "from-amber-500 to-orange-600" },
       { title: "Easy AI", text: "Smart AI assistant for your daily tasks.", gradient: "from-emerald-500 to-teal-600" },
     ],
-    whyKicker: "Why Easy Service?",
-    whyTitle: "Why Choose Easy Service?",
+    whyKicker: "Why Easy Sarvice?",
+    whyTitle: "Why Choose Easy Sarvice?",
     whyItems: [
       { title: "Fast Service", description: "Quick actions, instant support, and a seamless app experience.", icon: Zap, color: "from-cyan-500 to-blue-500" },
       { title: "Secure Payment", description: "Trusted transactions that keep your money protected.", icon: ShieldCheck, color: "from-violet-500 to-purple-500" },
@@ -216,7 +219,7 @@ const content = {
     ],
     faqsTitle: "Frequently Asked Questions",
     faqs: [
-      { question: "What is Easy Service?", answer: "Easy Service is a digital platform that brings recharge, reselling, microjobs, education, and AI tools together in one place." },
+      { question: "What is Easy Sarvice?", answer: "Easy Sarvice is a digital platform that brings recharge, reselling, microjobs, education, and AI tools together in one place." },
       { question: "Is the APK safe?", answer: "Yes. We provide the APK from an official source and keep it updated for secure use." },
       { question: "How do I create an account?", answer: "Install the app, fill in the registration form, and verify your account." },
       { question: "How do I use the app?", answer: "Open your account, choose a service, and follow the guided steps." },
@@ -224,7 +227,7 @@ const content = {
     ],
     ctaKicker: "Download Section",
     ctaTitle: "Ready to Get Started?",
-    ctaText: "Download Easy Service App now and enjoy all features from day one.",
+    ctaText: "Download Easy Sarvice App now and enjoy all features from day one.",
     footerTitle: "Stay connected",
     footerLinks: [
       { label: "Home", href: "#" },
@@ -345,8 +348,12 @@ function Marquee({ children, pauseOnHover = true }) {
 }
 
 // ─── Main Component ───
+const appLinks = {
+  android: "/app-release.apk",
+};
+
 export default function DownloadLanding() {
-  const [language, setLanguage] = useState("bn");
+  const [language, setLanguage] = useState("en");
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
@@ -362,23 +369,24 @@ export default function DownloadLanding() {
   useEffect(() => {
     document.documentElement.lang = language === "bn" ? "bn" : "en";
     document.title = language === "bn"
-      ? "Easy Service - বিনা পুঁজিতে অনলাইন ব্যবসা"
-      : "Easy Service - Start Online Business with Zero Investment";
+      ? "Easy Sarvice - Digital Reselling Platform in Bangladesh"
+      : "Easy Sarvice - Digital Reselling Platform in Bangladesh";
   }, [language]);
 
   return (
-    <div className={cn("relative min-h-screen overflow-x-hidden bg-[#0a0a0f] text-slate-100", language === "bn" && "font-bangla")}>
-      {/* Aurora Background */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-        <div className="absolute -left-[10%] -top-[10%] h-[600px] w-[600px] rounded-full bg-cyan-500/20 blur-[120px] animate-aurora" />
-        <div className="absolute -bottom-[10%] -right-[10%] h-[500px] w-[500px] rounded-full bg-purple-500/20 blur-[120px] animate-aurora [animation-delay:-10s]" />
-        <div className="absolute left-[60%] top-[40%] h-[400px] w-[400px] rounded-full bg-amber-500/15 blur-[100px] animate-aurora [animation-delay:-5s]" />
-        <div className="absolute left-[20%] top-[70%] h-[300px] w-[300px] rounded-full bg-cyan-500/15 blur-[100px] animate-aurora [animation-delay:-12s]" />
+    <div className={cn("relative min-h-screen overflow-x-hidden bg-[#121212] text-white", language === "bn" && "font-bangla")}>
+      
+      {/* iOS-style layered background */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-[#121212]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(41,182,246,0.12),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.10),_transparent_28%),linear-gradient(180deg,_rgba(18,18,18,1)_0%,_rgba(16,16,16,1)_100%)]" />
+        <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-[#29B6F6]/10 blur-[80px]" />
+        <div className="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-[#7c3aed]/10 blur-[90px]" />
+        <div className="absolute left-[25%] top-[35%] h-56 w-56 rounded-full bg-[#f59e0b]/5 blur-[80px]" />
       </div>
 
       {/* Noise Overlay */}
       <div
-        className="pointer-events-none fixed inset-0 z-[1] opacity-[0.03]"
+        className="pointer-events-none fixed inset-0 z-[1] opacity-[0.02]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
           backgroundRepeat: "repeat",
@@ -393,23 +401,49 @@ export default function DownloadLanding() {
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         className={cn(
           "fixed left-0 right-0 top-0 z-50 transition-all duration-300",
-          scrolled && "border-b border-white/[0.08] bg-[#0a0a0f]/80 backdrop-blur-2xl"
+          scrolled && "border-b border-[#333333]/60 bg-[#121212]/70 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            Easy Service
-          </div>
-
           <div className="flex items-center gap-3">
             {/* Menu Toggle */}
             <button
-              className="flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-sm font-medium text-slate-300 transition-all hover:bg-white/[0.06]"
+              className="flex items-center gap-2 rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.04))] px-3 py-2 text-sm font-medium text-white shadow-[0_8px_18px_rgba(0,0,0,0.12)] backdrop-blur-xl transition-all hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.06))]"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
               <span className="hidden sm:inline">Menu</span>
             </button>
+          </div>
+
+          <div className="ml-auto flex items-center gap-2">
+            <div className="flex items-center gap-2 text-xl font-bold tracking-tight text-white drop-shadow-[0_0_14px_rgba(125,211,252,0.35)]">
+              <img
+                src="/EasyService.png?v=2"
+                alt="Easy Sarvice app logo"
+                className="h-8 w-8 rounded-xl object-cover"
+              />
+              <span>Easy Sarvice</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+                <a
+                  href="https://app.easysarvice.com/login"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.06))] px-3 py-2 text-[11px] font-semibold text-[#dfeaf6] shadow-[0_8px_18px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.08))] sm:px-4 sm:py-2.5 sm:text-sm"
+                >
+                  Login
+                </a>
+                <a
+                  href="https://app.easysarvice.com/registration"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.08))] px-3 py-2 text-[11px] font-semibold text-white shadow-[0_8px_18px_rgba(0,0,0,0.10)] backdrop-blur-xl transition-all hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.20),rgba(255,255,255,0.10))] sm:px-4 sm:py-2.5 sm:text-sm"
+                >
+                  Sign Up
+                </a>
+            </div>
           </div>
         </div>
 
@@ -420,18 +454,18 @@ export default function DownloadLanding() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden border-b border-white/[0.08] bg-[#0a0a0f]/95 backdrop-blur-xl md:hidden"
+              className="overflow-hidden border-b border-[#333333] bg-[#121212]/95 backdrop-blur-xl md:hidden"
             >
               <div className="flex flex-col gap-4 p-6">
-                <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 text-sm font-medium text-slate-300">
+                <div className="rounded-xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.04))] px-4 py-3 text-sm font-medium text-white backdrop-blur-xl">
                   {language === "bn" ? "ভাষা নির্বাচন করুন" : "Choose Language"}
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     onClick={() => { setLanguage("bn"); setMobileMenuOpen(false); }}
                     className={cn(
-                      "rounded-xl px-4 py-3 text-left text-sm font-semibold transition-all",
-                      language === "bn" ? "bg-cyan-500/20 text-cyan-200 ring-1 ring-cyan-400/30" : "bg-white/[0.04] text-slate-300 hover:bg-white/[0.08]"
+                      "rounded-xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03))] px-4 py-3 text-left text-sm font-semibold text-white transition-all backdrop-blur-xl",
+                      language === "bn" ? "border-[#29B6F6]/40 bg-[#29B6F6]/10 text-[#29B6F6]" : "text-[#dfeaf6] hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.05))]"
                     )}
                   >
                     বাংলা
@@ -439,8 +473,8 @@ export default function DownloadLanding() {
                   <button
                     onClick={() => { setLanguage("en"); setMobileMenuOpen(false); }}
                     className={cn(
-                      "rounded-xl px-4 py-3 text-left text-sm font-semibold transition-all",
-                      language === "en" ? "bg-cyan-500/20 text-cyan-200 ring-1 ring-cyan-400/30" : "bg-white/[0.04] text-slate-300 hover:bg-white/[0.08]"
+                      "rounded-xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03))] px-4 py-3 text-left text-sm font-semibold text-white transition-all backdrop-blur-xl",
+                      language === "en" ? "border-[#29B6F6]/40 bg-[#29B6F6]/10 text-[#29B6F6]" : "text-[#dfeaf6] hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.05))]"
                     )}
                   >
                     English
@@ -453,132 +487,201 @@ export default function DownloadLanding() {
       </motion.nav>
 
       <main className="relative z-10">
-        {/* ─── Hero ─── */}
-        <section className="relative px-6 pt-32 pb-20 md:pt-40 md:pb-32">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+        {/* ─── Hero Section (Separate Mobile + Desktop Layouts) ─── */}
+        <section className="relative px-6 pt-28 pb-12">
+          {/* Mobile layout */}
+          <div className="mx-auto max-w-6xl md:hidden">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="order-2 lg:order-1"
+              className="relative overflow-hidden rounded-none border-0 bg-transparent p-0 shadow-none backdrop-blur-none"
             >
-              <motion.div variants={fadeInUp} className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-400">
-                <Sparkles size={16} />
+              <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-cyan-500/8 blur-[70px]" />
+
+              <motion.div variants={fadeInUp} className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] font-semibold text-[#dfeaf6]">
                 {copy.badge}
+                <img src="/crown@2x.avif" alt="Easy Sarvice premium badge" className="h-5 w-5 object-contain" />
               </motion.div>
 
-              <motion.p variants={fadeInUp} className="mb-4 text-sm font-semibold uppercase tracking-widest text-cyan-400">
-                {copy.heroEyebrow}
+              <motion.h1 variants={fadeInUp} className="mb-3 text-[2rem] font-extrabold leading-[1.1] tracking-[-0.04em] text-white">
+                {copy.heroTitle}
+              </motion.h1>
+
+              <motion.p variants={fadeInUp} className="mb-5 text-sm leading-relaxed text-slate-300">
+                {copy.heroText}
               </motion.p>
 
-              <AnimatePresence mode="wait">
-                <motion.h1
-                  key={language + "heroTitle"}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5 }}
-                  className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl lg:text-6xl"
-                >
-                  <span className="bg-gradient-to-br from-white via-cyan-200 to-purple-300 bg-clip-text text-transparent">
-                    {copy.heroTitle}
+              <motion.div variants={fadeInUp} className="mb-6 flex flex-col gap-3">
+                <a href={appLinks.android} download className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.07))] px-5 py-3 font-semibold text-white shadow-[0_12px_24px_rgba(0,0,0,0.16)] backdrop-blur-xl">
+                  <img src="/EasyService.png?v=2" alt="Easy Sarvice logo" className="h-8 w-8 rounded-3xl border border-white/[0.12] bg-white/10 p-1 object-cover" />
+                  <span className="inline-flex items-center gap-2">
+                    <Download size={18} className="text-[#7dd3fc]" />
+                    {copy.ctaPrimary}
                   </span>
-                </motion.h1>
-              </AnimatePresence>
-
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key={language + "heroText"}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="mb-8 max-w-lg text-lg leading-relaxed text-slate-400"
-                >
-                  {copy.heroText}
-                </motion.p>
-              </AnimatePresence>
-
-              <motion.div variants={fadeInUp} className="mb-8 flex flex-wrap gap-4">
-                <a
-                  href="/app-release.apk"
-                  download
-                  className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:shadow-cyan-500/40 hover:-translate-y-0.5"
-                >
-                  <Download size={18} />
-                  {copy.ctaPrimary}
-                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                </a>
-                <a
-                  href="#watch-video"
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/[0.1] bg-white/[0.03] px-6 py-3.5 font-semibold text-white backdrop-blur-xl transition-all hover:bg-white/[0.08] hover:-translate-y-0.5"
-                >
-                  <PlayCircle size={18} />
-                  {copy.ctaSecondary}
                 </a>
               </motion.div>
 
-              <motion.ul variants={fadeInUp} className="flex flex-col gap-3">
+              <motion.div variants={fadeInUp} className="relative mb-6 flex items-center justify-center gap-2">
+                <motion.img
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  src="/phonenew.png"
+                  alt="Easy Sarvice mobile app preview"
+                  className="ios-float w-[68%] max-w-[280px] drop-shadow-[0_30px_40px_rgba(34,211,238,0.20)]"
+                />
+                <img
+                  src="/shield.Cm8PO2pn.avif"
+                  alt="Easy Sarvice security badge"
+                  className="h-12 w-12 object-contain"
+                />
+              </motion.div>
+
+              <motion.ul variants={fadeInUp} className="space-y-3">
                 {copy.heroPoints.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-slate-400">
-                    <CheckCircle2 size={18} className="shrink-0 text-emerald-400" />
-                    <span>{item}</span>
+                  <li key={item} className="flex items-center gap-3 text-slate-300">
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+                      <CheckCircle2 size={16} />
+                    </div>
+                    <span className="text-sm font-medium">{item}</span>
                   </li>
                 ))}
               </motion.ul>
             </motion.div>
+          </div>
 
-            {/* 3D Phone Mockup */}
+          {/* Desktop layout */}
+          <div className="mx-auto hidden max-w-7xl gap-6 md:grid lg:grid-cols-3">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
-              animate={{ opacity: 1, scale: 1, rotateY: -5 }}
-              transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-              className="order-1 flex items-center justify-center lg:order-2"
-              style={{ perspective: 1000 }}
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+              className="lg:col-span-2 relative overflow-hidden rounded-[48px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.15),rgba(255,255,255,0.05))] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.22)] backdrop-blur-xl md:p-16"
             >
-              <div className="relative">
-                <motion.img
-                  whileHover={{ rotateY: 0, rotateX: 0 }}
-                  transition={{ duration: 0.5 }}
-                  src="/phone.png"
-                  alt="Easy Service app phone preview"
-                  className="h-[480px] w-auto max-w-[280px] rounded-[32px] object-contain shadow-2xl shadow-cyan-500/20"
-                  style={{ transformStyle: "preserve-3d", transform: "perspective(1000px) rotateY(-5deg) rotateX(5deg)" }}
-                />
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-[100px]" />
 
-                {/* Floating Badges */}
-                <motion.div
-                  animate={{ y: [0, -15, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -right-4 top-10 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-cyan-400 backdrop-blur-xl"
-                >
-                  50K+ Users
-                </motion.div>
-                <motion.div
-                  animate={{ y: [0, 15, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute -left-8 bottom-20 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-amber-400 backdrop-blur-xl"
-                >
-                  4.8 ★ Rating
-                </motion.div>
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                  className="absolute -right-2 bottom-10 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-emerald-400 backdrop-blur-xl"
-                >
-                  100% Secure
-                </motion.div>
+              <div className="relative z-20 flex flex-col h-full pb-48 sm:pb-0">
+                <div className="flex-1">
+                  <motion.div variants={fadeInUp} className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-400">
+                    {copy.badge}
+                    <img src="/crown@2x.avif" alt="Easy Sarvice premium badge" className="h-6 w-6 object-contain" />
+                  </motion.div>
+
+                  <motion.h1
+                    variants={fadeInUp}
+                    className="mb-6 text-4xl font-extrabold leading-[1.15] tracking-tight md:text-5xl lg:text-6xl"
+                  >
+                    <span className="bg-gradient-to-br from-white via-cyan-100 to-cyan-300 bg-clip-text text-transparent">
+                      {copy.heroTitle}
+                    </span>
+                  </motion.h1>
+
+                  <motion.p
+                    variants={fadeInUp}
+                    className="mb-8 max-w-md text-lg leading-relaxed text-slate-400"
+                  >
+                    {copy.heroText}
+                  </motion.p>
+
+                  <motion.div variants={fadeInUp} className="mb-12 flex flex-wrap gap-4">
+                    <a
+                      href={appLinks.android}
+                      download
+                      className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.07))] px-6 py-3.5 font-semibold text-white shadow-[0_12px_24px_rgba(0,0,0,0.16)] backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.22),rgba(255,255,255,0.10))]"
+                    >
+                      <img src="/EasyService.png?v=2" alt="Easy Sarvice logo" className="h-8 w-8 rounded-3xl border border-white/[0.12] bg-white/10 p-1 object-cover shadow-sm shadow-black/20" />
+                      <span className="inline-flex items-center gap-2">
+                        <Download size={18} className="text-[#7dd3fc]" />
+                        {copy.ctaPrimary}
+                      </span>
+                    </a>
+                  </motion.div>
+                </div>
+
+                <motion.ul variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-auto">
+                  {copy.heroPoints.map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-slate-300">
+                      <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
+                        <CheckCircle2 size={16} />
+                      </div>
+                      <span className="text-sm font-medium">{item}</span>
+                    </li>
+                  ))}
+                </motion.ul>
+              </div>
+
+              <div className="absolute right-[-15%] bottom-[-5%] w-[75%] sm:w-[65%] md:w-[48%] sm:right-[-8%] sm:bottom-[-8%] pointer-events-none z-10">
+                 <motion.img
+                   initial={{ y: 150, opacity: 0, rotate: 0 }}
+                   animate={{ y: 0, opacity: 1, rotate: -8 }}
+                   transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                   whileHover={{ scale: 1.05, rotate: -4 }}
+                   src="/phonenew.png"
+                   alt="Easy Sarvice mobile app mockup showing the dashboard"
+                   className="ios-float w-full drop-shadow-[0_50px_60px_rgba(34,211,238,0.25)]"
+                 />
               </div>
             </motion.div>
-          </div>
-        </section>
 
-        {/* ─── Stats ─── */}
-        <section className="px-6 py-12">
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3">
-            {copy.stats.map((item) => (
-              <AnimatedCounter key={item.label} value={item.value} label={item.label} />
-            ))}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative overflow-hidden rounded-[48px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.14),rgba(255,255,255,0.04))] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.20)] backdrop-blur-xl md:p-10 flex flex-col"
+            >
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-purple-500/10 blur-[100px]" />
+
+              <div className="relative z-10 mb-8 flex h-16 w-16 items-center justify-center rounded-[22px] border border-[#fbbf24]/40 bg-[linear-gradient(135deg,rgba(251,191,36,0.28),rgba(251,146,60,0.20))] text-[#f8d77a] shadow-[0_12px_26px_rgba(251,146,60,0.18)] backdrop-blur-xl">
+                <img
+                  src="/crown@2x.avif"
+                  alt="Easy Sarvice premium badge"
+                  className="h-10 w-10 object-contain"
+                />
+              </div>
+
+              <h2 className="relative z-10 mb-3 text-2xl font-bold text-white">
+                {copy.sideCardTitle}
+              </h2>
+
+              <p className="relative z-10 mb-8 text-sm text-slate-400 leading-relaxed">
+                {copy.sideCardText}
+              </p>
+
+              <img
+                src="/shield.Cm8PO2pn.avif"
+                alt="Easy Sarvice security badge"
+                className="relative z-10 mb-8 h-24 w-24 object-contain"
+              />
+
+              <div className="relative z-10 space-y-8 flex-1">
+                {copy.stats.map((stat) => (
+                  <div key={stat.label} className="flex flex-col">
+                    <span className="text-3xl font-extrabold text-white tracking-tight">
+                      {stat.value}
+                    </span>
+                    <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400 mt-1">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="https://t.me/easyserviceapp"
+                target="_blank"
+                rel="noreferrer"
+                className="group relative z-10 mt-10 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4 transition-all hover:bg-white/10 hover:border-cyan-500/30"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-[16px] border border-[#60a5fa]/30 bg-[linear-gradient(135deg,rgba(96,165,250,0.20),rgba(96,165,250,0.10))] text-[#7dd3fc] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl">
+                    <MessageCircle size={18} />
+                  </div>
+                  <span className="text-sm font-semibold text-white">Join Telegram</span>
+                </div>
+                <ArrowRight size={18} className="text-slate-500 transition-transform group-hover:translate-x-1 group-hover:text-cyan-400" />
+              </a>
+            </motion.div>
           </div>
         </section>
 
@@ -616,12 +719,12 @@ export default function DownloadLanding() {
                     transition={{ delay: i * 0.1, duration: 0.5 }}
                     whileHover={{ y: -4, transition: { duration: 0.2 } }}
                     className={cn(
-                      "group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8 backdrop-blur-xl transition-all hover:border-white/[0.15] hover:bg-white/[0.06]",
+                      "group relative overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.04))] p-8 shadow-[0_15px_30px_rgba(0,0,0,0.12)] backdrop-blur-xl transition-all hover:border-white/20 hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.06))]",
                       isLarge && "md:col-span-2 lg:col-span-1"
                     )}
                   >
                     <div className={cn("absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br opacity-20 blur-3xl transition-opacity group-hover:opacity-40", item.color)} />
-                    <div className={cn("mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-lg", item.color)}>
+                    <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-[18px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.10),rgba(255,255,255,0.04))] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_18px_rgba(0,0,0,0.18)] backdrop-blur-xl">
                       <Icon size={22} />
                     </div>
                     <h3 className="relative z-10 mb-2 text-lg font-bold">{item.title}</h3>
@@ -727,9 +830,9 @@ export default function DownloadLanding() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1, duration: 0.5 }}
-                      className="h-full rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8 text-center backdrop-blur-xl transition-all hover:border-white/[0.15] hover:bg-white/[0.06]"
+                      className="h-full rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.04))] p-8 text-center shadow-[0_15px_30px_rgba(0,0,0,0.12)] backdrop-blur-xl transition-all hover:border-white/20 hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.06))]"
                     >
-                      <div className={cn("mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-lg", item.color)}>
+                      <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-[20px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.10),rgba(255,255,255,0.04))] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_10px_22px_rgba(0,0,0,0.18)] backdrop-blur-xl">
                         <Icon size={26} />
                       </div>
                       <h3 className="mb-2 text-lg font-bold">{item.title}</h3>
@@ -792,10 +895,10 @@ export default function DownloadLanding() {
               variants={staggerContainer}
               className="mb-16 text-center"
             >
-              <motion.span variants={fadeInUp} className="mb-4 inline-block rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-1.5 text-sm font-semibold text-cyan-400">
-                {copy.faqsTitle}
+              <motion.span variants={fadeInUp} className="mb-4 inline-block rounded-full border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.04))] px-4 py-1.5 text-sm font-semibold text-[#dfeaf6] backdrop-blur-xl">
+                Frequently Asked Questions
               </motion.span>
-              <motion.h2 variants={fadeInUp} className="mb-4 text-3xl font-bold md:text-4xl">
+              <motion.h2 variants={fadeInUp} className="mb-4 text-3xl font-bold text-white md:text-4xl">
                 {copy.faqsTitle}
               </motion.h2>
             </motion.div>
@@ -811,10 +914,10 @@ export default function DownloadLanding() {
                 >
                   <div
                     className={cn(
-                      "rounded-2xl border transition-all duration-300",
+                      "rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.04))] backdrop-blur-xl transition-all duration-300",
                       openFaq === i
-                        ? "border-cyan-500/30 bg-cyan-500/[0.03]"
-                        : "border-white/[0.08] bg-white/[0.03] hover:border-white/[0.15]"
+                        ? "border-white/20 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.08))]"
+                        : "hover:border-white/20"
                     )}
                   >
                     <button
@@ -858,7 +961,7 @@ export default function DownloadLanding() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/[0.08] bg-white/[0.03] p-12 text-center backdrop-blur-2xl md:p-16"
+            className="relative mx-auto max-w-5xl overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.05))] p-12 text-center shadow-[0_20px_40px_rgba(0,0,0,0.20)] backdrop-blur-2xl md:p-16"
           >
             <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
             <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-purple-500/10 blur-3xl" />
@@ -875,12 +978,15 @@ export default function DownloadLanding() {
 
             <div className="relative z-10 flex flex-wrap justify-center gap-4">
               <a
-                href="/app-release.apk"
+                href={appLinks.android}
                 download
-                className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:shadow-cyan-500/40 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.07))] px-6 py-3.5 font-semibold text-white shadow-[0_12px_24px_rgba(0,0,0,0.16)] backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.22),rgba(255,255,255,0.10))]"
               >
-                <Download size={18} />
-                {copy.ctaPrimary}
+                <img src="/EasyService.png?v=2" alt="Easy Sarvice logo" className="h-8 w-8 rounded-3xl border border-white/[0.12] bg-white/10 p-1 object-cover shadow-sm shadow-black/20" />
+                <span className="inline-flex items-center gap-2">
+                  <Download size={18} className="text-[#7dd3fc]" />
+                  {copy.ctaPrimary}
+                </span>
               </a>
               <a
                 href="https://t.me/easyserviceapp"
@@ -913,8 +1019,8 @@ export default function DownloadLanding() {
         <footer className="border-t border-white/[0.08] px-6 py-16">
           <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 lg:grid-cols-4">
             <div>
-              <h4 className="mb-4 text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Easy Service
+              <h4 className="mb-4 text-xl font-bold tracking-tight text-white drop-shadow-[0_0_12px_rgba(125,211,252,0.25)]">
+                Easy Sarvice
               </h4>
               <p className="text-sm leading-relaxed text-slate-500">
                 All-in-One Digital Platform for Bangladesh. Start your online business with zero investment today.
@@ -970,7 +1076,7 @@ export default function DownloadLanding() {
             </div>
           </div>
           <div className="mx-auto mt-12 max-w-7xl border-t border-white/[0.08] pt-8 text-center text-sm text-slate-600">
-            © 2026 Easy Service. All rights reserved. Made with ❤️ in Bangladesh.
+            © 2026 Easy Sarvice. All rights reserved. Made with ❤️ in Bangladesh.
           </div>
         </footer>
       </main>
@@ -984,6 +1090,14 @@ export default function DownloadLanding() {
         }
         .animate-aurora {
           animation: aurora 20s ease-in-out infinite;
+        }
+        @keyframes iosFloat {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-8px) rotate(1deg); }
+        }
+        .ios-float {
+          animation: iosFloat 3.2s ease-in-out infinite;
+          will-change: transform;
         }
         @keyframes marquee {
           0% { transform: translateX(0); }

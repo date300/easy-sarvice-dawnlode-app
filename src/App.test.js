@@ -19,5 +19,5 @@ test('renders the main landing sections', () => {
 
   expect(screen.getByRole('heading', { name: /Amazing Features/i })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: /How It Works/i })).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: /Why Choose Easy Service/i })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /Why Choose Easy Sarvice/i })).toBeInTheDocument();
 });

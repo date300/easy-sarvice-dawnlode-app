@@ -4,12 +4,24 @@
 
 :root {
   color-scheme: dark;
+  --primary: #29B6F6;
+  --page-bg: #121212;
+  --card-bg: #1E1E1E;
+  --input-bg: #2C2C2C;
+  --text-primary: #FFFFFF;
+  --text-secondary: #9E9E9E;
+  --border: #333333;
+}
+
+html {
+  background: var(--page-bg);
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background: #040816;
+  background: var(--page-bg);
+  color: var(--text-primary);
   font-family: Inter, "Segoe UI", sans-serif;
 }
 
@@ -19,5 +31,11 @@ body {
 
 #root {
   min-height: 100vh;
+  background: var(--page-bg);
+}
+
+::selection {
+  background: rgba(41, 182, 246, 0.35);
+  color: var(--text-primary);
 }
 
